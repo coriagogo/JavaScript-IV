@@ -27,6 +27,23 @@ class Instructor extends Person {
     grade(student, subject) {
         return `${student.name} receives a perfect score on ${subject}`;
     }
+
+    //*Stretch goal* needs to be refreshed to eventually pass
+    graduate(student) {         
+        var randomN = Math.floor(Math.random() * 41) -20 + student.grade;
+        let newGrade = randomN;
+        if (newGrade <= 69) {
+            return `${student.name} has not passed.`
+        } else {
+            return `${student.name} has passed!`
+        }
+    } 
+    
+    
+
+    
+    
+    
 }
 
 
@@ -37,6 +54,7 @@ class Student extends Person {
         this.previousBackground = attributes.previousBackground;
         this.className = attributes.className;
         this.favSubject = attributes.favSubject;
+        this.grade = attributes.grade;
     }
 
     listsSubjects() {
@@ -98,7 +116,8 @@ const cori = new Student({
     gender: 'female',
     previousBackground: 'Bartender',
     className: 'WEB19',
-    favSubject: 'CSS'
+    favSubject: 'CSS',
+    grade: 40,
 });
 
 const leo = new Student({
@@ -108,7 +127,8 @@ const leo = new Student({
     gender: 'male',
     previousBackground: 'Journalist',
     className: 'WEB19',
-    favSubject: 'JavaScript'
+    favSubject: 'JavaScript',
+    grade: 25,
 });
 
 const annalise = new Student({
@@ -118,7 +138,8 @@ const annalise = new Student({
     gender: 'female',
     previousBackground: 'Lawyer',
     className: 'WEB19',
-    favSubject: 'HTML'
+    favSubject: 'HTML',
+    grade: 55,
 });
 
 const nick = new ProjectManager({
@@ -145,5 +166,5 @@ const cait = new ProjectManager({
     favInstructor: 'fred'
 })
 
-
+console.log(fred.graduate(annalise));
 
